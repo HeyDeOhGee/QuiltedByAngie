@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Quilted By Angie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Quilted By Angie</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#cart" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Get In Touch</h1>
+        <p>Have questions? I'd love to hear from you</p>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-form">
+                    <h2>Send Me a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:hello@quiltedtreasures.com">hello@quiltedtreasures.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🏠 Location</h3>
+                        <p>Handmade Quilts Studio<br>Your City, State 12345</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>⏰ Hours</h3>
+                        <p>Monday - Friday: 10am - 5pm<br>Saturday: 11am - 4pm<br>Sunday: Closed</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Custom Orders Inquiry</h3>
+                    <p>Interested in a custom quilt? Please fill out the contact form and let me know about your vision. I'll get back to you within 24-48 hours to discuss your project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Quilted By Angie. All rights reserved.</p>
+            <p>Handmade with passion in your community</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

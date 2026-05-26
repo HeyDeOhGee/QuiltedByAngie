@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Quilted By Angie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Quilted By Angie</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#cart" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Shop</h1>
+        <p>Browse and purchase our beautiful handmade quilts</p>
+    </section>
+
+    <section class="shop">
+        <div class="container">
+            <div class="shop-layout">
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <h3>Filter by Size</h3>
+                        <label><input type="checkbox" value="throw" class="size-filter"> Throw</label>
+                        <label><input type="checkbox" value="twin" class="size-filter"> Twin</label>
+                        <label><input type="checkbox" value="queen" class="size-filter"> Queen</label>
+                        <label><input type="checkbox" value="king" class="size-filter"> King</label>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Filter by Price</h3>
+                        <label><input type="radio" name="price" value="0-200" class="price-filter"> Under $200</label>
+                        <label><input type="radio" name="price" value="200-400" class="price-filter"> $200 - $400</label>
+                        <label><input type="radio" name="price" value="400-600" class="price-filter"> $400 - $600</label>
+                        <label><input type="radio" name="price" value="600+" class="price-filter"> $600+</label>
+                    </div>
+                </aside>
+
+                <main class="shop-content">
+                    <div class="shop-controls">
+                        <label>Sort by:
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="shop-grid" id="shopGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: <strong id="subtotal">$0.00</strong></p>
+                <p>Tax (8%): <strong id="tax">$0.00</strong></p>
+                <p class="total">Total: <strong id="total">$0.00</strong></p>
+            </div>
+            <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-secondary" id="continueShopping">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <h3>Shipping Information</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" id="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" id="zip" required>
+                    </div>
+                </div>
+
+                <h3>Payment Information</h3>
+                <div class="form-group">
+                    <label>Card Name</label>
+                    <input type="text" id="cardName" required>
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Complete Purchase</button>
+                <button type="button" class="btn btn-secondary" id="backToCart">Back to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content confirmation">
+            <h2>✓ Order Confirmed!</h2>
+            <p>Thank you for your purchase! Your quilts will be carefully shipped to you soon.</p>
+            <p id="orderNumber">Order #: <strong></strong></p>
+            <p>A confirmation email has been sent to <strong id="confirmEmail"></strong></p>
+            <button class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Quilted By Angie. All rights reserved.</p>
+            <p>Handmade with passion in your community</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>

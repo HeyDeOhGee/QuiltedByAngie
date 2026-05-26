@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Quilted By Angie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8b5a8c 0%, #c4a0d4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #8b5a8c;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .construction-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .email-form input:focus {
+            outline: none;
+            border-color: #8b5a8c;
+            box-shadow: 0 0 5px rgba(139, 90, 140, 0.2);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #8b5a8c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #6b4a6c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            display: none;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 2rem 0;
+        }
+
+        .features {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .features h3 {
+            font-size: 1.1rem;
+            color: #8b5a8c;
+            margin-bottom: 1rem;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: #8b5a8c;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            color: #8b5a8c;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #8b5a8c;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .construction-icon {
+                font-size: 3rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Quilted By Angie</div>
+        <div class="construction-icon">🧵</div>
+        
+        <h1>Coming Soon!</h1>
+        <p class="subtitle">We're stitching together something beautiful for you.</p>
+        
+        <p class="description">
+            Our new online shop will showcase handcrafted quilts and exclusive designs. 
+            Get notified when we launch!
+        </p>
+
+        <div class="newsletter">
+            <label class="newsletter-label">Be the first to know:</label>
+            <div id="message" class="message"></div>
+            <form id="notifyForm" class="email-form">
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Enter your email" 
+                    required
+                    autocomplete="email"
+                >
+                <button type="submit" class="btn">Notify Me</button>
+            </form>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="features">
+            <h3>What's Coming:</h3>
+            <ul>
+                <li>Handmade quilts and custom orders</li>
+                <li>Gallery of Angie's creations</li>
+                <li>Easy online shopping</li>
+                <li>Premium craftsmanship and materials</li>
+            </ul>
+        </div>
+
+        <div class="social-links">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Pinterest">P</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('notifyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message');
+            
+            let subscribers = JSON.parse(localStorage.getItem('subscribers')) || [];
+            
+            if (subscribers.includes(email)) {
+                message.textContent = 'You\'re already on our list!';
+                message.className = 'message error';
+            } else {
+                subscribers.push(email);
+                localStorage.setItem('subscribers', JSON.stringify(subscribers));
+                
+                message.textContent = '✓ Thanks! Check your email for updates.';
+                message.className = 'message success';
+                
+                document.getElementById('notifyForm').reset();
+                
+                setTimeout(() => {
+                    message.className = 'message';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
